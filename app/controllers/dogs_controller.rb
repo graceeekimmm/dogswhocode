@@ -3,6 +3,7 @@ class DogsController < ApplicationController
 
 
 	def index
+		@dogs = Dog.all.order("created_at DESC")
 	end
 
 	def new
@@ -16,9 +17,16 @@ class DogsController < ApplicationController
 	end
 
 	def update
+		if @dog.update(dog_params)
+			redirect_to @dog, notice: "Pin was succesfully updated"
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@dog.destroy
+		redirect_to root_path
 	end
 
 
