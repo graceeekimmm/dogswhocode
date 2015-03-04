@@ -7,7 +7,7 @@ class DogsController < ApplicationController
 	end
 
 	def new
-		@dog=Dog.new
+		@dog=current_user.dogs.build
 	end
 
 	def show
@@ -31,7 +31,7 @@ class DogsController < ApplicationController
 
 
 	def create
-		@dog =Dog.new(dog_params)
+		@dog =current_user.dogs.build(dog_params)
 		if @dog.save
 			redirect_to @dog, notice: " You have succesfully added the Dog"
 		else
