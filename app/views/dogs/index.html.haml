@@ -1,3 +1,5 @@
 - @dogs.each do |dog|
-	=link_to (image_tag dog.image.url(:medium)),dog
-	%h2= link_to dog.title, dog
+	.jumbotron
+		.container
+			= link_to (image_tag dog.image.url), dog
+			%h2= link_to dog.title, dog

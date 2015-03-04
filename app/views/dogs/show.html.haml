@@ -1,10 +1,11 @@
-= image_tag @dog.image.url(:medium)
-%h1= @dog.title
-%p= @dog.description
+%center
+	= image_tag @dog.image.url(:medium)
+	%h1= @dog.title
+	%p= @dog.description
 
-Entered by 
-= @dog.user.email
-%br
-= link_to "Back",root_path
-= link_to "Edit", edit_dog_path
-= link_to "Delete", dog_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+	Entered by 
+	= @dog.user.email
+	%br
+	= link_to "Back",root_path , class: "btn btn-default"
+	= link_to "Edit", edit_dog_path, class: "btn btn-warning"
+	= link_to "Delete", dog_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

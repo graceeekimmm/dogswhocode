@@ -18,7 +18,7 @@ class DogsController < ApplicationController
 
 	def update
 		if @dog.update(dog_params)
-			redirect_to @dog, notice: "Pin was succesfully updated"
+			redirect_to @dog, notice: " You have succesfully updated the dog information"
 		else
 			render 'edit'
 		end
