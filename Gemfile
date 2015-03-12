@@ -27,6 +27,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.2.1'
 gem 'masonry-rails', '~> 0.2.4'
+gem 'therubyracer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -48,6 +49,13 @@ group :development, :test do
   gem 'spring'
 
   gem 'sqlite3'
+
+  gem 'database_cleaner'
+
+  gem 'cucumber-rails', :require => false
+  gem 'rspec-rails', '~> 3.2.1'
+  gem 'simplecov', '~> 0.9.2'
+
   
 end
 

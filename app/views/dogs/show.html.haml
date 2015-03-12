@@ -2,6 +2,8 @@
 	= image_tag @dog.image.url(:medium)
 	%h1= @dog.title
 	%p= @dog.description
+	%br
+	= document @dog.document.url
 
 	Entered by 
 	= @dog.user.email
@@ -9,3 +11,16 @@
 	= link_to "Back",root_path , class: "btn btn-default"
 	= link_to "Edit", edit_dog_path, class: "btn btn-warning"
 	= link_to "Delete", dog_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+	%br
+	%center
+		Entered by 
+		= @dog.user.email
+		%br
+		Created on
+		= @dog.user.created_at
+		%br
+		Updated on
+		= @dog.user.updated_at
+		
+
+

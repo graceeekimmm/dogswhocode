@@ -39,10 +39,11 @@ class DogsController < ApplicationController
 		end
 	end
 
+
 	private
 
 	def dog_params
-		params.require(:dog).permit(:title,:description,:image)
+		params.require(:dog).permit(:title,:description,:image,:document)
 	end
 
 
