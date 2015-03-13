@@ -5,16 +5,14 @@ Feature: viewing all animals
   I want to be able to see a list of all the animals in the system
 
 Background: animals in database
-
+  Given I am logged in as an admin
   Given that the following animals exist:
-  | name        | breed              |
+  | title       | description        |
   | Max         | Golden Retriever   |
   | Munar       | Chocolate Labrador |
 
-  And I am on the home page
 
 Scenario: View all animals
-  When I click on “All Animals”
-  Then I should be on all animals page
+  Given I am on the home page
   Then I should see “Max”
   Then I should see “Munar”
