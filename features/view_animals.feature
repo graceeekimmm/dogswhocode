@@ -14,7 +14,7 @@ Background: animals in database
   And I am on the home page
 
 Scenario: View all animals
-  When I click on the “All Animals” button
-  Then I should be on the All Animals Page
+  When I click on “All Animals”
+  Then I should be on all animals page
   Then I should see “Max”
   Then I should see “Munar”
