@@ -1,21 +1,24 @@
 Feature: adding an animal
-
   As an Admin
   So that I can add a new animal into the rescue
   I want to be able to add an animal to the system with its information
 
-Scenario: Go to “Add Animal” page
-  Given that I am on the home page
-  When I click on the “Add Animal” button
-  I should see the Add Animal page
-    
-Scenario: Add an animal
-  Given that I am on the “Add Animal” page
-  When I fill in “Name” with “Munar”
-  And I fill in “Breed” with “Chocolate Labrador”
-  And I press “Add Animal”
-  Then I should be on the home page
-  Then I should see “Munar has been successfully added.”
-  Then the breed of “Munar” should be “Chocolate Labrador”
+  Background: Set up admin user
+    Given I am logged in as an admin
+
+  Scenario: Go to “Add Animal” page
+    Given I am on the home page
+    When I follow "Enter a new dog"
+    Then I should see "Enter a new dog"
+    And I should be on the new dog page
+    When I fill in "Munar" for "Title"
+
+  Scenario: Add an animal
+    Given I am on the new dog page
+    When I fill in "Title" with "Munar"
+    And I fill in "Description" with "dark but lovely"
+    And I press "Create Dog"
+    Then I should see "Munar"
+    Then I should see "Entered by admin@admin.com"
     
 
