@@ -15,7 +15,9 @@ Background: animals in database
   And I am on the "All Animals" page
 
 Scenario: Filtering animals by field
-  When I filter by breed=”Chocolate Labrador”
+  Given I press "Advanced Filter"
+  When I fill in "breed" with "Chocolate Labrador"
+  And I press "search"
   Then I should see “Bryan”
   And I should see “Munar”
   And I should not see “Max”
