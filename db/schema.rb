@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304203159) do
+ActiveRecord::Schema.define(version: 20150314042110) do
 
   create_table "dogs", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150304203159) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.string   "breed"
   end
 
   add_index "dogs", ["user_id"], name: "index_dogs_on_user_id"
