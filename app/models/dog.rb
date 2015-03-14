@@ -1,4 +1,5 @@
 class Dog < ActiveRecord::Base
+    attr_accessible :title, :description, :breed #idk
 	belongs_to :user
 
 	has_attached_file :image,styles: {medium: "300x300"}

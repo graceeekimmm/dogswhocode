@@ -14,7 +14,7 @@ Background: animals in database
 
   And I am on the "All Animals" page
 
-Scenario: Filtering animals by field
+Scenario: Filter animals by field
   When I filter by breed=”Chocolate Labrador”
   Then I should see “Bryan”
   And I should see “Munar”
